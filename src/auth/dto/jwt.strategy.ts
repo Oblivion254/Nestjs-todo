@@ -16,12 +16,14 @@ export class JwtStrategy extends PassportStrategy(Strategy){
         })
     }
 
-    async validate(payload: {userEmail:string}){
-        const user = await this.DatabaseService.user.findUnique({
+    async validate(payload: {email:string}){
+        const user = await this.DatabaseService.user.findFirst({
             where:{
-                email: payload.userEmail,
-            },
+                email: payload.email,
+            }
         });
         return user;
+        
+        
     }
 }

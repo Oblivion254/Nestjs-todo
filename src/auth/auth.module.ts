@@ -11,7 +11,7 @@ import { JwtStrategy } from './dto/jwt.strategy';
     DatabaseModule,
     PassportModule,
     JwtModule.register({
-      secret: 'secret',
+      secret: 'Secret',
       signOptions:{
         expiresIn: '1h'
       }
